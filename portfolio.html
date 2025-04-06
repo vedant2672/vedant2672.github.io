@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -16,6 +16,10 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
     />
   </head>
   <body>
@@ -43,23 +47,38 @@
 
     <div id="about" class="info section">
       <div class="heading" data-aos="fade-up">
-        <h1>Hey World, I am Vedant!</h1>
+        <h1 class="gradient-text">
+          Hey World, I am <span class="animated-text">Vedant!</span>
+        </h1>
       </div>
-      <img
-        src="vedant.jpg"
-        alt="Vedant"
-        class="displayPic"
-        data-aos="zoom-in"
-      />
-      <div class="info-about" data-aos="fade-up">
-        <p class="para-about">
-          I am a B.Tech CSE student with a strong passion for coding and
-          software development. I enjoy exploring new technologies and building
-          innovative projects.
-          <br /><br />
-          When I'm not coding, you'll often find me at the gym or watching
-          sports, as I love staying active and keeping up with the latest games.
-        </p>
+      <div class="about-container">
+        <img
+          src="vedant.jpg"
+          alt="Vedant"
+          class="displayPic rounded-circle shadow-lg"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+        />
+        <div class="info-about" data-aos="fade-up" data-aos-delay="500">
+          <p class="para-about">
+            I am a <span class="highlight">B.Tech CSE student</span> with a
+            strong passion for coding and software development. I enjoy
+            exploring new technologies and building innovative projects.
+            <br /><br />
+            When I'm not coding, you'll often find me at the
+            <span class="highlight">gym</span> or watching sports, as I love
+            staying active and keeping up with the latest games.
+          </p>
+          <div class="resume-download" data-aos="fade-up" data-aos-delay="700">
+            <button
+              id="resumeDownloadBtn"
+              class="download-btn btn btn-primary btn-lg shadow-sm"
+              onclick="downloadResume()"
+            >
+              <i class="fas fa-download"></i> Download My Resume
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -69,88 +88,430 @@
       <div class="heading" data-aos="fade-up">
         <h1>Projects</h1>
       </div>
-      <div class="cards para-about">
-        <div class="card project-info" data-aos="flip-left">
-          <div class="card-img">
-            <img
-              src="wanderlust.png"
-              class="card-img-top"
-              alt="Wanderlust project"
-            />
-          </div>
-          <div class="card-body">
-            <h4>Wanderlust</h4>
-            <div class="tech-stack">
-              <span class="tech-badge">MongoDB</span>
-              <span class="tech-badge">Express</span>
-              <span class="tech-badge">React</span>
-              <span class="tech-badge">Node.js</span>
+
+      <!-- Project Filter Buttons -->
+      <div class="project-filter" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="fullstack">Fullstack</button>
+        <button class="filter-btn" data-filter="frontend">Frontend</button>
+        <button class="filter-btn" data-filter="other">Other</button>
+      </div>
+
+      <div class="project-grid">
+        <!-- Project 1 -->
+        <div
+          class="project-item fullstack"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div class="project-card">
+            <div class="project-image">
+              <img src="wanderlust.png" alt="Wanderlust project" />
+              <div class="project-overlay">
+                <div class="project-preview">
+                  <div class="overlay-tech-stack">
+                    <span class="tech-badge">MongoDB</span>
+                    <span class="tech-badge">Express</span>
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Node.js</span>
+                  </div>
+                  <button class="preview-btn" data-project="project1">
+                    View Details
+                  </button>
+                </div>
+              </div>
             </div>
-            <p class="card-text">
-              A travel website that helps you plan your trips and explore new
-              destinations.
-            </p>
-            <div class="project-links">
-              <a href="#" class="project-link"
-                ><i class="fas fa-link"></i> Live Demo</a
-              >
-              <a href="#" class="project-link"
-                ><i class="fab fa-github"></i> Code</a
-              >
+            <div class="project-content">
+              <h3>Wanderlust</h3>
+              <div class="tech-stack">
+                <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">Express</span>
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Node.js</span>
+              </div>
+              <p>
+                A travel website that helps you plan your trips and explore new
+                destinations.
+              </p>
             </div>
           </div>
         </div>
+
+        <!-- Project-2 -->
         <div
-          class="card project-info"
-          data-aos="flip-left"
+          class="project-item fullstack"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div class="project-card">
+            <div class="project-image">
+              <img src="Zerodha2.png" alt="Zerodha project" />
+              <div class="project-overlay">
+                <div class="project-preview">
+                  <div class="overlay-tech-stack">
+                    <span class="tech-badge">MongoDB</span>
+                    <span class="tech-badge">Express</span>
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Node.js</span>
+                  </div>
+                  <button class="preview-btn" data-project="project2">
+                    View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Zerodha Clone</h3>
+              <div class="tech-stack">
+                <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">Express</span>
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Node.js</span>
+              </div>
+              <p>
+                Developed a Zerodha clone with features like stock buying,
+                watchlist, holdings, and positions. Integrated real-time stock
+                price updates using MongoDB for dynamic portfolio management.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project-3 -->
+        <div
+          class="project-item frontend"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div class="project-card">
+            <div class="project-image">
+              <img src="WeatherApp.png" alt="Weather App" />
+              <div class="project-overlay">
+                <div class="project-preview">
+                  <div class="overlay-tech-stack">
+                    <span class="tech-badge">Frontend</span>
+                    <span class="tech-badge">React</span>
+                  </div>
+                  <button class="preview-btn" data-project="project3">
+                    View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>WeatherApp</h3>
+              <div class="tech-stack">
+                <span class="tech-badge">Frontend</span>
+                <span class="tech-badge">React</span>
+              </div>
+              <p>
+                Developed a WeatherApp with features like real-time weather
+                updates, location-based forecasts, and user-friendly interface.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div
+          class="project-item frontend"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <div class="project-card">
+            <div class="project-image">
+              <img src="ToDoList.png" alt="To-Do List" />
+              <div class="project-overlay">
+                <div class="project-preview">
+                  <div class="overlay-tech-stack">
+                    <span class="tech-badge">Frontend</span>
+                    <span class="tech-badge">React</span>
+                  </div>
+                  <button class="preview-btn" data-project="project4">
+                    View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>To-Do List</h3>
+              <div class="tech-stack">
+                <span class="tech-badge">Frontend</span>
+                <span class="tech-badge">React</span>
+              </div>
+              <p>To-Do List Using React with state management.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div
+          class="project-item frontend"
+          data-aos="fade-up"
           data-aos-delay="200"
         >
-          <div class="card-img">
-            <img src="spotify.png" class="card-img-top" alt="Spotify clone" />
-          </div>
-          <div class="card-body">
-            <h4>Spotify Clone</h4>
-            <div class="tech-stack">
-              <span class="tech-badge">HTML</span>
-              <span class="tech-badge">CSS</span>
+          <div class="project-card">
+            <div class="project-image">
+              <img src="spotify.png" alt="Spotify clone" />
+              <div class="project-overlay">
+                <div class="project-preview">
+                  <div class="overlay-tech-stack">
+                    <span class="tech-badge">Frontend</span>
+                    <span class="tech-badge">HTML</span>
+                    <span class="tech-badge">CSS</span>
+                  </div>
+                  <button class="preview-btn" data-project="project5">
+                    View Details
+                  </button>
+                </div>
+              </div>
             </div>
-            <p class="card-text">
-              Front-end clone of the Spotify website using html and css.
-            </p>
-            <div class="project-links">
-              <a href="#" class="project-link"
-                ><i class="fas fa-link"></i> Live Demo</a
-              >
-              <a href="#" class="project-link"
-                ><i class="fab fa-github"></i> Code</a
-              >
+            <div class="project-content">
+              <h3>Spotify Clone</h3>
+              <div class="tech-stack">
+                <span class="tech-badge">Frontend</span>
+                <span class="tech-badge">HTML</span>
+                <span class="tech-badge">CSS</span>
+              </div>
+              <p>Front-end clone of the Spotify website using HTML and CSS.</p>
             </div>
           </div>
         </div>
-        <div
-          class="card project-info"
-          data-aos="flip-left"
-          data-aos-delay="400"
-        >
-          <div class="card-img">
-            <img src="todo.png" class="card-img-top" alt="To-Do List" />
-          </div>
-          <div class="card-body">
-            <h4>To-Do List</h4>
-            <div class="tech-stack">
-              <span class="tech-badge">React</span>
-              <span class="tech-badge">CSS</span>
+      </div>
+
+      <!-- Project Modals -->
+      <div class="project-modal-container">
+        <!-- Project 1 Modal -->
+        <div id="project1-modal" class="project-modal">
+          <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+              <h2>Wanderlust</h2>
+              <div class="modal-tags">
+                <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">Express</span>
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">Fullstack</span>
+              </div>
             </div>
-            <p class="card-text">
-              To-Do List Using React with state management.
-            </p>
-            <div class="project-links">
-              <a href="#" class="project-link"
-                ><i class="fas fa-link"></i> Live Demo</a
-              >
-              <a href="#" class="project-link"
-                ><i class="fab fa-github"></i> Code</a
-              >
+            <div class="modal-body">
+              <div class="modal-image">
+                <img src="wanderlust.png" alt="Wanderlust project" />
+              </div>
+              <div class="modal-description">
+                <h3>Project Overview</h3>
+                <p>
+                  A comprehensive travel website that helps users plan their
+                  trips and explore new destinations. The platform includes
+                  features like:
+                </p>
+                <ul>
+                  <li>User authentication and profiles</li>
+                  <li>Interactive maps for exploration</li>
+                  <li>Booking system for accommodations</li>
+                  <li>Reviews and ratings for destinations</li>
+                  <li>Personalized trip recommendations</li>
+                </ul>
+                <h3>Technical Approach</h3>
+                <p>
+                  Built with the MERN stack (MongoDB, Express, React, Node.js)
+                  with a focus on performance and responsive design.
+                </p>
+                <div class="modal-links">
+                  <a
+                    href="https://wanderlust-imsq.onrender.com/"
+                    class="modal-btn"
+                    ><i class="fas fa-link"></i> Live Demo</a
+                  >
+                  <a href="#" class="modal-btn"
+                    ><i class="fab fa-github"></i> View Code</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 Modal -->
+        <div id="project2-modal" class="project-modal">
+          <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+              <h2>Zerodha Clone – Stock Trading Dashboard</h2>
+              <div class="modal-tags">
+                <span class="tech-badge">Fullstack</span>
+                <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">Express</span>
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Node.js</span>
+              </div>
+            </div>
+            <div class="modal-body">
+              <div class="modal-image">
+                <img src="Zerodha2.png" alt="Zerodha Clone project" />
+              </div>
+              <div class="modal-description">
+                <h3>Project Overview</h3>
+                <p>
+                  A web application that simulates stock trading, allowing users
+                  to manage their portfolio and track market activity in
+                  real-time.
+                </p>
+                <ul>
+                  <li>Buy stocks with simulated transactions</li>
+                  <li>Add or remove stocks from a personal watchlist</li>
+                  <li>View and manage holdings and positions</li>
+                  <li>Reviews and ratings for destinations</li>
+                  <li>Clean and user-friendly interface</li>
+                </ul>
+                <h3>Technical Approach</h3>
+                <p>
+                  Built with the MERN stack (MongoDB, Express, React, Node.js)
+                  with a focus on performance and responsive design.
+                </p>
+                <div class="modal-links">
+                  <a href="#" class="modal-btn"
+                    ><i class="fas fa-link"></i> Live Demo</a
+                  >
+                  <a href="#" class="modal-btn"
+                    ><i class="fab fa-github"></i> View Code</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 Modal -->
+        <div id="project3-modal" class="project-modal">
+          <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+              <h2>Wanderlust</h2>
+              <div class="modal-tags">
+                <span class="tech-badge">Frontend</span>
+                <span class="tech-badge">React</span>
+              </div>
+            </div>
+            <div class="modal-body">
+              <div class="modal-image">
+                <img src="WeatherApp.png" alt="Wanderlust project" />
+              </div>
+              <div class="modal-description">
+                <h3>Weather App – Live Weather Forecast</h3>
+                <p>
+                  A responsive web app built with React that displays real-time
+                  weather information by fetching data from a public weather
+                  API. Users can search for any city to view current
+                  temperature, weather conditions, and more.
+                </p>
+                <ul>
+                  <li>Real Time Weather Updates</li>
+                </ul>
+                <h3>Technical Approach</h3>
+                <p>
+                  Built with the React with a focus on performance and
+                  responsive design.
+                </p>
+                <div class="modal-links">
+                  <a href="#" class="modal-btn"
+                    ><i class="fas fa-link"></i> Live Demo</a
+                  >
+                  <a href="#" class="modal-btn"
+                    ><i class="fab fa-github"></i> View Code</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 Modal -->
+        <div id="project4-modal" class="project-modal">
+          <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+              <h2>To-Do List</h2>
+              <div class="modal-tags">
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Frontend</span>
+              </div>
+            </div>
+            <div class="modal-body">
+              <div class="modal-image">
+                <img src="ToDoList.png" alt="To-Do List" />
+              </div>
+              <div class="modal-description">
+                <h3>Project Overview</h3>
+                <p>
+                  A feature-rich task management application built with React
+                  that includes:
+                </p>
+                <ul>
+                  <li>Task creation, editing, and deletion</li>
+                  <li>Task categorization and priority levels</li>
+                  <li>Filter and sorting options</li>
+                  <li>Local storage for persistence</li>
+                  <li>Dark/light theme toggle</li>
+                </ul>
+                <h3>Technical Approach</h3>
+                <p>
+                  This React application demonstrates effective state
+                  management, component organization, and responsive design
+                  principles.
+                </p>
+                <div class="modal-links">
+                  <a href="#" class="modal-btn"
+                    ><i class="fas fa-link"></i> Live Demo</a
+                  >
+                  <a href="#" class="modal-btn"
+                    ><i class="fab fa-github"></i> View Code</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 Modal -->
+        <div id="project5-modal" class="project-modal">
+          <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+              <h2>Spotify Clone</h2>
+              <div class="modal-tags">
+                <span class="tech-badge">Frontend</span>
+                <span class="tech-badge">HTML</span>
+                <span class="tech-badge">CSS</span>
+              </div>
+            </div>
+            <div class="modal-body">
+              <div class="modal-image">
+                <img src="spotify.png" alt="Spotify clone" />
+              </div>
+              <div class="modal-description">
+                <h3>Project Overview</h3>
+                <p>A pixel-perfect clone of the Spotify web interface with:</p>
+                <ul>
+                  <li>Responsive design for all device sizes</li>
+                  <li>Custom CSS animations and transitions</li>
+                  <li>Interactive UI elements like carousels and cards</li>
+                  <li>Dark mode interface</li>
+                </ul>
+                <h3>Technical Approach</h3>
+                <p>
+                  This project focuses on advanced CSS techniques including
+                  Flexbox, Grid, and CSS variables for a maintainable codebase.
+                </p>
+                <div class="modal-links">
+                  <a
+                    href="https://github.com/vedant2672/Spotify-UI"
+                    class="modal-btn"
+                    ><i class="fab fa-github"></i> View Code</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -163,8 +524,8 @@
         <h1>Skills</h1>
       </div>
       <div class="skills-container">
-        <div class="skill-grid" data-aos="fade-up">
-          <div class="skill-item">
+        <div class="skill-grid">
+          <div class="skill-item" data-aos="fade-right" data-aos-delay="100">
             <i class="fab fa-java skill-icons" title="Java"></i>
             <div class="skill-progress-wrapper">
               <span>Java</span>
@@ -174,7 +535,7 @@
               <span class="skill-percentage">85%</span>
             </div>
           </div>
-          <div class="skill-item">
+          <div class="skill-item" data-aos="fade-left" data-aos-delay="200">
             <i class="fab fa-html5 skill-icons" title="HTML"></i>
             <div class="skill-progress-wrapper">
               <span>HTML</span>
@@ -184,7 +545,7 @@
               <span class="skill-percentage">90%</span>
             </div>
           </div>
-          <div class="skill-item">
+          <div class="skill-item" data-aos="fade-right" data-aos-delay="300">
             <i class="fab fa-css3-alt skill-icons" title="CSS"></i>
             <div class="skill-progress-wrapper">
               <span>CSS</span>
@@ -194,7 +555,7 @@
               <span class="skill-percentage">80%</span>
             </div>
           </div>
-          <div class="skill-item">
+          <div class="skill-item" data-aos="fade-left" data-aos-delay="400">
             <i class="fab fa-js skill-icons" title="JavaScript"></i>
             <div class="skill-progress-wrapper">
               <span>JavaScript</span>
@@ -204,7 +565,7 @@
               <span class="skill-percentage">75%</span>
             </div>
           </div>
-          <div class="skill-item">
+          <div class="skill-item" data-aos="fade-right" data-aos-delay="500">
             <i class="fab fa-react skill-icons" title="React"></i>
             <div class="skill-progress-wrapper">
               <span>React</span>
@@ -214,7 +575,7 @@
               <span class="skill-percentage">70%</span>
             </div>
           </div>
-          <div class="skill-item">
+          <div class="skill-item" data-aos="fade-left" data-aos-delay="600">
             <i class="fab fa-node-js skill-icons" title="Express"></i>
             <div class="skill-progress-wrapper">
               <span>Express/Node.js</span>
@@ -234,46 +595,52 @@
         <h1>Get In Touch</h1>
       </div>
       <div class="contact-container">
-        <div class="contact-info" data-aos="fade-right">
+        <div class="contact-info" data-aos="fade-up">
           <h3>Let's Connect</h3>
           <p>
             Feel free to reach out for collaborations, opportunities, or just to
-            say hello!
+            say hello! I'm always open to discussing new projects and ideas.
           </p>
           <div class="contact-details">
             <div class="contact-item">
               <i class="fas fa-envelope"></i>
-              <span>vedantsingh2672@example.com</span>
+              <span>vedantsingh2672@gmail.com</span>
             </div>
             <div class="contact-item">
               <i class="fas fa-phone"></i>
-              <span>+91 639694****</span>
+              <span>+91 6396******</span>
             </div>
             <div class="contact-item">
               <i class="fas fa-map-marker-alt"></i>
-              <span>Mumbai, India</span>
+              <span>UP, India</span>
+            </div>
+          </div>
+          <div class="social-contact-links">
+            <h4>Find me on social media</h4>
+            <div class="social-icons">
+              <a
+                href="https://github.com/vedant2672"
+                class="social-contact-link"
+                target="_blank"
+              >
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/vedant-singh-04453b2b0/"
+                class="social-contact-link"
+                target="_blank"
+              >
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="#" class="social-contact-link" target="_blank">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+              </a>
             </div>
           </div>
         </div>
-        <form class="contact-form" data-aos="fade-left">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Your Name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Your Email" required />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea
-              id="message"
-              placeholder="Write your message here..."
-              required
-            ></textarea>
-          </div>
-          <button type="submit" class="submit-btn">Send Message</button>
-        </form>
       </div>
     </div>
 
@@ -281,15 +648,27 @@
       <div class="footer-content">
         <p>&copy; 2023 Vedant Singh. All Rights Reserved.</p>
         <div class="icons footer-socials">
-          <a href="#" class="social-links"
+          <a
+            href="#"
+            class="social-links"
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
             ><i class="fa-brands fa-instagram"></i
           ></a>
-          <a href="https://github.com/vedant2672" class="social-links"
+          <a
+            href="https://github.com/vedant2672"
+            class="social-links"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-anchor-placement="top-bottom"
             ><i class="fa-brands fa-github"></i
           ></a>
           <a
             href="https://www.linkedin.com/in/vedant-singh-04453b2b0/"
             class="social-links"
+            data-aos="fade-up"
+            data-aos-delay="400"
+            data-aos-anchor-placement="top-bottom"
             ><i class="fa-brands fa-linkedin"></i
           ></a>
         </div>
