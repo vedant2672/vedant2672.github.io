@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link
@@ -23,27 +23,33 @@
     />
   </head>
   <body>
-    <div class="navbar">
-      <p class="logo">Vedant Singh</p>
-      <div class="nav-info">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#contact" class="nav-link">Contact</a>
-        <button
-          id="darkModeToggle"
-          class="dark-mode-btn"
-          aria-label="Toggle dark mode"
-        >
-          <i class="fas fa-moon"></i>
+    <nav class="navbar" id="main-nav">
+      <div class="navbar-container">
+        <a href="#" class="logo-link">
+          <h1 class="logo">Vedant Singh</h1>
+        </a>
+        <div class="nav-info">
+          <a href="#about" class="nav-link" data-section="about">About</a>
+          <a href="#projects" class="nav-link" data-section="projects"
+            >Projects</a
+          >
+          <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+          <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+          <button
+            id="darkModeToggle"
+            class="dark-mode-btn"
+            aria-label="Toggle dark mode"
+          >
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+        <button class="hamburger" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
+    </nav>
 
     <div id="about" class="info section">
       <div class="heading" data-aos="fade-up">
@@ -61,13 +67,18 @@
         />
         <div class="info-about" data-aos="fade-up" data-aos-delay="500">
           <p class="para-about">
-            I am a <span class="highlight">B.Tech CSE student</span> with a
-            strong passion for coding and software development. I enjoy
-            exploring new technologies and building innovative projects.
-            <br /><br />
-            When I'm not coding, you'll often find me at the
-            <span class="highlight">gym</span> or watching sports, as I love
-            staying active and keeping up with the latest games.
+            Hey there! I'm a
+            <span class="highlight">B.Tech CSE student</span> who's genuinely
+            passionate about coding and building cool things with tech. I love
+            diving into new tools, learning how things work under the hood, and
+            turning ideas into real, functional projects. Whether it's working
+            on a web app, exploring AI, or just experimenting with code — I
+            enjoy the process as much as the result. <br /><br />
+            When I'm not coding, you'll probably find me at the
+            <span class="highlight">gym</span> lifting weights or chilling out
+            watching sports or gaming. Staying active helps me stay focused, and
+            I think having that balance between tech and fitness keeps me
+            grounded and motivated.
           </p>
           <div class="resume-download" data-aos="fade-up" data-aos-delay="700">
             <button
@@ -124,6 +135,7 @@
             <div class="project-content">
               <h3>Wanderlust</h3>
               <div class="tech-stack">
+                <span class="tech-badge">Fullstack</span>
                 <span class="tech-badge">MongoDB</span>
                 <span class="tech-badge">Express</span>
                 <span class="tech-badge">React</span>
@@ -163,6 +175,7 @@
             <div class="project-content">
               <h3>Zerodha Clone</h3>
               <div class="tech-stack">
+                <span class="tech-badge">Fullstack</span>
                 <span class="tech-badge">MongoDB</span>
                 <span class="tech-badge">Express</span>
                 <span class="tech-badge">React</span>
@@ -170,8 +183,7 @@
               </div>
               <p>
                 Developed a Zerodha clone with features like stock buying,
-                watchlist, holdings, and positions. Integrated real-time stock
-                price updates using MongoDB for dynamic portfolio management.
+                watchlist, holdings, and positions.
               </p>
             </div>
           </div>
@@ -189,7 +201,6 @@
               <div class="project-overlay">
                 <div class="project-preview">
                   <div class="overlay-tech-stack">
-                    <span class="tech-badge">Frontend</span>
                     <span class="tech-badge">React</span>
                   </div>
                   <button class="preview-btn" data-project="project3">
@@ -224,7 +235,6 @@
               <div class="project-overlay">
                 <div class="project-preview">
                   <div class="overlay-tech-stack">
-                    <span class="tech-badge">Frontend</span>
                     <span class="tech-badge">React</span>
                   </div>
                   <button class="preview-btn" data-project="project4">
@@ -256,7 +266,6 @@
               <div class="project-overlay">
                 <div class="project-preview">
                   <div class="overlay-tech-stack">
-                    <span class="tech-badge">Frontend</span>
                     <span class="tech-badge">HTML</span>
                     <span class="tech-badge">CSS</span>
                   </div>
@@ -288,45 +297,94 @@
             <div class="modal-header">
               <h2>Wanderlust</h2>
               <div class="modal-tags">
-                <span class="tech-badge">MongoDB</span>
-                <span class="tech-badge">Express</span>
-                <span class="tech-badge">React</span>
-                <span class="tech-badge">Node.js</span>
-                <span class="tech-badge">Fullstack</span>
+                <span class="tech-badge"
+                  ><i class="fab fa-node-js"></i> MongoDB</span
+                >
+                <span class="tech-badge"
+                  ><i class="fas fa-server"></i> Express</span
+                >
+                <span class="tech-badge"
+                  ><i class="fab fa-react"></i> React</span
+                >
+                <span class="tech-badge"
+                  ><i class="fab fa-node"></i> Node.js</span
+                >
+                <span class="tech-badge"
+                  ><i class="fas fa-layer-group"></i> Fullstack</span
+                >
               </div>
             </div>
             <div class="modal-body">
-              <div class="modal-image">
-                <img src="wanderlust.png" alt="Wanderlust project" />
+              <div class="modal-image-container">
+                <div class="modal-image">
+                  <img src="wanderlust.png" alt="Wanderlust project" />
+                </div>
+                <div class="tech-overview">
+                  <h4>Technologies Used</h4>
+                  <div class="tech-grid">
+                    <span class="tech-item"
+                      ><i class="fab fa-node-js"></i> MongoDB</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fas fa-server"></i> Express</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fab fa-react"></i> React</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fab fa-node"></i> Node.js</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fas fa-map-marked-alt"></i> Mapbox API</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fas fa-cloud"></i> Cloudinary</span
+                    >
+                  </div>
+                </div>
               </div>
-              <div class="modal-description">
-                <h3>Project Overview</h3>
-                <p>
-                  A comprehensive travel website that helps users plan their
-                  trips and explore new destinations. The platform includes
-                  features like:
-                </p>
-                <ul>
-                  <li>User authentication and profiles</li>
-                  <li>Interactive maps for exploration</li>
-                  <li>Booking system for accommodations</li>
-                  <li>Reviews and ratings for destinations</li>
-                  <li>Personalized trip recommendations</li>
-                </ul>
-                <h3>Technical Approach</h3>
-                <p>
-                  Built with the MERN stack (MongoDB, Express, React, Node.js)
-                  with a focus on performance and responsive design.
-                </p>
+              <div class="modal-details">
+                <div class="modal-section">
+                  <h3><i class="fas fa-info-circle"></i> Project Overview</h3>
+                  <p>
+                    A comprehensive travel website that helps users plan their
+                    trips and explore new destinations. The platform includes
+                    features like user authentication, interactive maps, booking
+                    systems, and personalized recommendations.
+                  </p>
+                </div>
+
+                <div class="modal-section">
+                  <h3><i class="fas fa-list-ul"></i> Key Features</h3>
+                  <ul class="feature-list">
+                    <li>User authentication and profiles</li>
+                    <li>Interactive maps for exploration</li>
+                    <li>Booking system for accommodations</li>
+                    <li>Reviews and ratings for destinations</li>
+                    <li>Personalized trip recommendations</li>
+                  </ul>
+                </div>
+
+                <div class="modal-section">
+                  <h3><i class="fas fa-code"></i> Technical Approach</h3>
+                  <p>
+                    Built with the MERN stack (MongoDB, Express, React, Node.js)
+                    with a focus on performance and responsive design. The
+                    application implements RESTful API patterns and uses modern
+                    JavaScript practices.
+                  </p>
+                </div>
+
                 <div class="modal-links">
                   <a
                     href="https://wanderlust-imsq.onrender.com/"
-                    class="modal-btn"
-                    ><i class="fas fa-link"></i> Live Demo</a
+                    class="modal-btn primary-btn"
                   >
-                  <a href="#" class="modal-btn"
-                    ><i class="fab fa-github"></i> View Code</a
-                  >
+                    <i class="fas fa-globe"></i> Live Demo
+                  </a>
+                  <a href="#" class="modal-btn secondary-btn">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
                 </div>
               </div>
             </div>
@@ -340,43 +398,90 @@
             <div class="modal-header">
               <h2>Zerodha Clone – Stock Trading Dashboard</h2>
               <div class="modal-tags">
-                <span class="tech-badge">Fullstack</span>
-                <span class="tech-badge">MongoDB</span>
-                <span class="tech-badge">Express</span>
-                <span class="tech-badge">React</span>
-                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge"
+                  ><i class="fab fa-node-js"></i> MongoDB</span
+                >
+                <span class="tech-badge"
+                  ><i class="fas fa-server"></i> Express</span
+                >
+                <span class="tech-badge"
+                  ><i class="fab fa-react"></i> React</span
+                >
+                <span class="tech-badge"
+                  ><i class="fab fa-node"></i> Node.js</span
+                >
+                <span class="tech-badge"
+                  ><i class="fas fa-layer-group"></i> Fullstack</span
+                >
               </div>
             </div>
             <div class="modal-body">
-              <div class="modal-image">
-                <img src="Zerodha2.png" alt="Zerodha Clone project" />
+              <div class="modal-image-container">
+                <div class="modal-image">
+                  <img src="Zerodha2.png" alt="Zerodha Clone project" />
+                </div>
+                <div class="tech-overview">
+                  <h4>Technologies Used</h4>
+                  <div class="tech-grid">
+                    <span class="tech-item"
+                      ><i class="fab fa-node-js"></i> MongoDB</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fas fa-server"></i> Express</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fab fa-react"></i> React</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fab fa-node"></i> Node.js</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fas fa-chart-line"></i> Chart.js</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fas fa-lock"></i> JWT</span
+                    >
+                  </div>
+                </div>
               </div>
-              <div class="modal-description">
-                <h3>Project Overview</h3>
-                <p>
-                  A web application that simulates stock trading, allowing users
-                  to manage their portfolio and track market activity in
-                  real-time.
-                </p>
-                <ul>
-                  <li>Buy stocks with simulated transactions</li>
-                  <li>Add or remove stocks from a personal watchlist</li>
-                  <li>View and manage holdings and positions</li>
-                  <li>Reviews and ratings for destinations</li>
-                  <li>Clean and user-friendly interface</li>
-                </ul>
-                <h3>Technical Approach</h3>
-                <p>
-                  Built with the MERN stack (MongoDB, Express, React, Node.js)
-                  with a focus on performance and responsive design.
-                </p>
+              <div class="modal-details">
+                <div class="modal-section">
+                  <h3><i class="fas fa-info-circle"></i> Project Overview</h3>
+                  <p>
+                    A web application that simulates stock trading, allowing
+                    users to manage their portfolio and track market activity in
+                    real-time. Inspired by the popular Zerodha trading platform.
+                  </p>
+                </div>
+
+                <div class="modal-section">
+                  <h3><i class="fas fa-list-ul"></i> Key Features</h3>
+                  <ul class="feature-list">
+                    <li>Buy stocks with simulated transactions</li>
+                    <li>Add or remove stocks from a personal watchlist</li>
+                    <li>View and manage holdings and positions</li>
+                    <li>Real-time stock price tracking</li>
+                    <li>Clean and user-friendly interface</li>
+                  </ul>
+                </div>
+
+                <div class="modal-section">
+                  <h3><i class="fas fa-code"></i> Technical Approach</h3>
+                  <p>
+                    Built with the MERN stack (MongoDB, Express, React, Node.js)
+                    with a focus on performance and responsive design. Uses
+                    Context API for state management and integrates with
+                    external financial APIs.
+                  </p>
+                </div>
+
                 <div class="modal-links">
-                  <a href="#" class="modal-btn"
-                    ><i class="fas fa-link"></i> Live Demo</a
-                  >
-                  <a href="#" class="modal-btn"
-                    ><i class="fab fa-github"></i> View Code</a
-                  >
+                  <a href="#" class="modal-btn primary-btn">
+                    <i class="fas fa-globe"></i> Live Demo
+                  </a>
+                  <a href="#" class="modal-btn secondary-btn">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
                 </div>
               </div>
             </div>
@@ -388,39 +493,82 @@
           <div class="modal-content">
             <span class="close-modal">&times;</span>
             <div class="modal-header">
-              <h2>Wanderlust</h2>
+              <h2>Weather App</h2>
               <div class="modal-tags">
-                <span class="tech-badge">Frontend</span>
-                <span class="tech-badge">React</span>
+                <span class="tech-badge"
+                  ><i class="fab fa-react"></i> React</span
+                >
+                <span class="tech-badge"
+                  ><i class="fas fa-desktop"></i> Frontend</span
+                >
+                <span class="tech-badge"><i class="fas fa-cloud"></i> API</span>
               </div>
             </div>
             <div class="modal-body">
-              <div class="modal-image">
-                <img src="WeatherApp.png" alt="Wanderlust project" />
+              <div class="modal-image-container">
+                <div class="modal-image">
+                  <img src="WeatherApp.png" alt="Weather App project" />
+                </div>
+                <div class="tech-overview">
+                  <h4>Technologies Used</h4>
+                  <div class="tech-grid">
+                    <span class="tech-item"
+                      ><i class="fab fa-react"></i> React</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fab fa-css3"></i> CSS3</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fab fa-js"></i> JavaScript</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fas fa-cloud"></i> Weather API</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fas fa-location-arrow"></i> Geolocation</span
+                    >
+                  </div>
+                </div>
               </div>
-              <div class="modal-description">
-                <h3>Weather App – Live Weather Forecast</h3>
-                <p>
-                  A responsive web app built with React that displays real-time
-                  weather information by fetching data from a public weather
-                  API. Users can search for any city to view current
-                  temperature, weather conditions, and more.
-                </p>
-                <ul>
-                  <li>Real Time Weather Updates</li>
-                </ul>
-                <h3>Technical Approach</h3>
-                <p>
-                  Built with the React with a focus on performance and
-                  responsive design.
-                </p>
+              <div class="modal-details">
+                <div class="modal-section">
+                  <h3>
+                    <i class="fas fa-info-circle"></i> Weather App – Live
+                    Weather Forecast
+                  </h3>
+                  <p>
+                    A responsive web app built with React that displays
+                    real-time weather information by fetching data from a public
+                    weather API. Users can search for any city to view current
+                    temperature, weather conditions, and more.
+                  </p>
+                </div>
+
+                <div class="modal-section">
+                  <h3><i class="fas fa-list-ul"></i> Key Features</h3>
+                  <ul class="feature-list">
+                    <li>Real-time weather updates</li>
+                    <li>Location-based forecasts</li>
+                    <li>City search functionality</li>
+                    <li>5-day weather prediction</li>
+                    <li>Responsive design for all devices</li>
+                  </ul>
+                </div>
+
+                <div class="modal-section">
+                  <h3><i class="fas fa-code"></i> Technical Approach</h3>
+                  <p>
+                    Built with React and modern JavaScript, this application
+                    uses fetch API to retrieve data from external weather
+                    services. The UI dynamically changes based on the current
+                    weather conditions.
+                  </p>
+                </div>
+
                 <div class="modal-links">
-                  <a href="#" class="modal-btn"
-                    ><i class="fas fa-link"></i> Live Demo</a
-                  >
-                  <a href="#" class="modal-btn"
-                    ><i class="fab fa-github"></i> View Code</a
-                  >
+                  <a href="#" class="modal-btn secondary-btn">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
                 </div>
               </div>
             </div>
@@ -434,40 +582,72 @@
             <div class="modal-header">
               <h2>To-Do List</h2>
               <div class="modal-tags">
-                <span class="tech-badge">React</span>
-                <span class="tech-badge">Frontend</span>
+                <span class="tech-badge"
+                  ><i class="fab fa-react"></i> React</span
+                >
+                <span class="tech-badge"
+                  ><i class="fas fa-desktop"></i> Frontend</span
+                >
               </div>
             </div>
             <div class="modal-body">
-              <div class="modal-image">
-                <img src="ToDoList.png" alt="To-Do List" />
+              <div class="modal-image-container">
+                <div class="modal-image">
+                  <img src="ToDoList.png" alt="To-Do List" />
+                </div>
+                <div class="tech-overview">
+                  <h4>Technologies Used</h4>
+                  <div class="tech-grid">
+                    <span class="tech-item"
+                      ><i class="fab fa-react"></i> React</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fab fa-css3"></i> CSS3</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fab fa-js"></i> JavaScript</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fas fa-database"></i> Local Storage</span
+                    >
+                  </div>
+                </div>
               </div>
-              <div class="modal-description">
-                <h3>Project Overview</h3>
-                <p>
-                  A feature-rich task management application built with React
-                  that includes:
-                </p>
-                <ul>
-                  <li>Task creation, editing, and deletion</li>
-                  <li>Task categorization and priority levels</li>
-                  <li>Filter and sorting options</li>
-                  <li>Local storage for persistence</li>
-                  <li>Dark/light theme toggle</li>
-                </ul>
-                <h3>Technical Approach</h3>
-                <p>
-                  This React application demonstrates effective state
-                  management, component organization, and responsive design
-                  principles.
-                </p>
+              <div class="modal-details">
+                <div class="modal-section">
+                  <h3><i class="fas fa-info-circle"></i> Project Overview</h3>
+                  <p>
+                    A feature-rich task management application built with React
+                    that helps users organize their tasks with categories,
+                    priorities, and filtering options.
+                  </p>
+                </div>
+
+                <div class="modal-section">
+                  <h3><i class="fas fa-list-ul"></i> Key Features</h3>
+                  <ul class="feature-list">
+                    <li>Task creation, editing, and deletion</li>
+                    <li>Task categorization and priority levels</li>
+                    <li>Filter and sorting options</li>
+                    <li>Local storage for persistence</li>
+                    <li>Dark/light theme toggle</li>
+                  </ul>
+                </div>
+
+                <div class="modal-section">
+                  <h3><i class="fas fa-code"></i> Technical Approach</h3>
+                  <p>
+                    This React application demonstrates effective state
+                    management, component organization, and responsive design
+                    principles. Uses local browser storage to maintain task data
+                    between sessions.
+                  </p>
+                </div>
+
                 <div class="modal-links">
-                  <a href="#" class="modal-btn"
-                    ><i class="fas fa-link"></i> Live Demo</a
-                  >
-                  <a href="#" class="modal-btn"
-                    ><i class="fab fa-github"></i> View Code</a
-                  >
+                  <a href="#" class="modal-btn secondary-btn">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
                 </div>
               </div>
             </div>
@@ -481,35 +661,78 @@
             <div class="modal-header">
               <h2>Spotify Clone</h2>
               <div class="modal-tags">
-                <span class="tech-badge">Frontend</span>
-                <span class="tech-badge">HTML</span>
-                <span class="tech-badge">CSS</span>
+                <span class="tech-badge"
+                  ><i class="fab fa-html5"></i> HTML</span
+                >
+                <span class="tech-badge"
+                  ><i class="fab fa-css3-alt"></i> CSS</span
+                >
+                <span class="tech-badge"
+                  ><i class="fas fa-desktop"></i> Frontend</span
+                >
               </div>
             </div>
             <div class="modal-body">
-              <div class="modal-image">
-                <img src="spotify.png" alt="Spotify clone" />
+              <div class="modal-image-container">
+                <div class="modal-image">
+                  <img src="spotify.png" alt="Spotify clone" />
+                </div>
+                <div class="tech-overview">
+                  <h4>Technologies Used</h4>
+                  <div class="tech-grid">
+                    <span class="tech-item"
+                      ><i class="fab fa-html5"></i> HTML5</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fab fa-css3-alt"></i> CSS3</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fab fa-js"></i> JavaScript</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fas fa-mobile-alt"></i> Responsive Design</span
+                    >
+                  </div>
+                </div>
               </div>
-              <div class="modal-description">
-                <h3>Project Overview</h3>
-                <p>A pixel-perfect clone of the Spotify web interface with:</p>
-                <ul>
-                  <li>Responsive design for all device sizes</li>
-                  <li>Custom CSS animations and transitions</li>
-                  <li>Interactive UI elements like carousels and cards</li>
-                  <li>Dark mode interface</li>
-                </ul>
-                <h3>Technical Approach</h3>
-                <p>
-                  This project focuses on advanced CSS techniques including
-                  Flexbox, Grid, and CSS variables for a maintainable codebase.
-                </p>
+              <div class="modal-details">
+                <div class="modal-section">
+                  <h3><i class="fas fa-info-circle"></i> Project Overview</h3>
+                  <p>
+                    A pixel-perfect clone of the Spotify web interface with
+                    responsive design, custom animations, and a focus on visual
+                    fidelity to the original platform.
+                  </p>
+                </div>
+
+                <div class="modal-section">
+                  <h3><i class="fas fa-list-ul"></i> Key Features</h3>
+                  <ul class="feature-list">
+                    <li>Responsive design for all device sizes</li>
+                    <li>Custom CSS animations and transitions</li>
+                    <li>Interactive UI elements like carousels and cards</li>
+                    <li>Dark mode interface</li>
+                    <li>Accurate recreation of Spotify's design language</li>
+                  </ul>
+                </div>
+
+                <div class="modal-section">
+                  <h3><i class="fas fa-code"></i> Technical Approach</h3>
+                  <p>
+                    This project focuses on advanced CSS techniques including
+                    Flexbox, Grid, and CSS variables for a maintainable
+                    codebase. Special attention was given to performance and
+                    animation fluidity.
+                  </p>
+                </div>
+
                 <div class="modal-links">
                   <a
                     href="https://github.com/vedant2672/Spotify-UI"
-                    class="modal-btn"
-                    ><i class="fab fa-github"></i> View Code</a
+                    class="modal-btn secondary-btn"
                   >
+                    <i class="fab fa-github"></i> View Code
+                  </a>
                 </div>
               </div>
             </div>
@@ -521,68 +744,74 @@
 
     <div id="skills" class="skills section">
       <div class="heading" data-aos="fade-up">
-        <h1>Skills</h1>
+        <h1 class="gradient-text">Skills</h1>
       </div>
       <div class="skills-container">
-        <div class="skill-grid">
-          <div class="skill-item" data-aos="fade-right" data-aos-delay="100">
-            <i class="fab fa-java skill-icons" title="Java"></i>
-            <div class="skill-progress-wrapper">
-              <span>Java</span>
-              <div class="skill-progress">
-                <div class="skill-progress-bar" style="width: 85%"></div>
-              </div>
-              <span class="skill-percentage">85%</span>
+        <!-- Frontend Category -->
+        <div class="skills-category">
+          <h3 class="category-title" data-aos="fade-right">Frontend</h3>
+          <div class="skill-grid">
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+              <i class="fab fa-html5 skill-icons" title="HTML"></i>
+              <span class="skill-name">HTML</span>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
+              <i class="fab fa-css3-alt skill-icons" title="CSS"></i>
+              <span class="skill-name">CSS</span>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+              <i class="fab fa-js skill-icons" title="JavaScript"></i>
+              <span class="skill-name">JavaScript</span>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="250">
+              <i class="fab fa-react skill-icons" title="React"></i>
+              <span class="skill-name">React</span>
             </div>
           </div>
-          <div class="skill-item" data-aos="fade-left" data-aos-delay="200">
-            <i class="fab fa-html5 skill-icons" title="HTML"></i>
-            <div class="skill-progress-wrapper">
-              <span>HTML</span>
-              <div class="skill-progress">
-                <div class="skill-progress-bar" style="width: 90%"></div>
-              </div>
-              <span class="skill-percentage">90%</span>
+        </div>
+
+        <!-- Backend Category -->
+        <div class="skills-category">
+          <h3 class="category-title" data-aos="fade-right">Backend</h3>
+          <div class="skill-grid">
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+              <i class="fab fa-java skill-icons" title="Java"></i>
+              <span class="skill-name">Java</span>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
+              <i class="fab fa-node-js skill-icons" title="Node.js"></i>
+              <span class="skill-name">Node.js</span>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+              <i class="fas fa-server skill-icons" title="Express"></i>
+              <span class="skill-name">Express</span>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="250">
+              <i class="fas fa-database skill-icons" title="MongoDB"></i>
+              <span class="skill-name">MongoDB</span>
             </div>
           </div>
-          <div class="skill-item" data-aos="fade-right" data-aos-delay="300">
-            <i class="fab fa-css3-alt skill-icons" title="CSS"></i>
-            <div class="skill-progress-wrapper">
-              <span>CSS</span>
-              <div class="skill-progress">
-                <div class="skill-progress-bar" style="width: 80%"></div>
-              </div>
-              <span class="skill-percentage">80%</span>
+        </div>
+
+        <!-- Other Skills Category -->
+        <div class="skills-category">
+          <h3 class="category-title" data-aos="fade-right">Tools & Other</h3>
+          <div class="skill-grid">
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+              <i class="fab fa-git-alt skill-icons" title="Git"></i>
+              <span class="skill-name">Git</span>
             </div>
-          </div>
-          <div class="skill-item" data-aos="fade-left" data-aos-delay="400">
-            <i class="fab fa-js skill-icons" title="JavaScript"></i>
-            <div class="skill-progress-wrapper">
-              <span>JavaScript</span>
-              <div class="skill-progress">
-                <div class="skill-progress-bar" style="width: 75%"></div>
-              </div>
-              <span class="skill-percentage">75%</span>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
+              <i class="fab fa-github skill-icons" title="GitHub"></i>
+              <span class="skill-name">GitHub</span>
             </div>
-          </div>
-          <div class="skill-item" data-aos="fade-right" data-aos-delay="500">
-            <i class="fab fa-react skill-icons" title="React"></i>
-            <div class="skill-progress-wrapper">
-              <span>React</span>
-              <div class="skill-progress">
-                <div class="skill-progress-bar" style="width: 70%"></div>
-              </div>
-              <span class="skill-percentage">70%</span>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+              <i class="fas fa-terminal skill-icons" title="Command Line"></i>
+              <span class="skill-name">Command Line</span>
             </div>
-          </div>
-          <div class="skill-item" data-aos="fade-left" data-aos-delay="600">
-            <i class="fab fa-node-js skill-icons" title="Express"></i>
-            <div class="skill-progress-wrapper">
-              <span>Express/Node.js</span>
-              <div class="skill-progress">
-                <div class="skill-progress-bar" style="width: 65%"></div>
-              </div>
-              <span class="skill-percentage">65%</span>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="250">
+              <i class="fas fa-code skill-icons" title="VS Code"></i>
+              <span class="skill-name">VS Code</span>
             </div>
           </div>
         </div>
@@ -592,7 +821,7 @@
 
     <div id="contact" class="contact section">
       <div class="heading" data-aos="fade-up">
-        <h1>Get In Touch</h1>
+        <h1 class="gradient-text">Get In Touch</h1>
       </div>
       <div class="contact-container">
         <div class="contact-info" data-aos="fade-up">
@@ -602,15 +831,27 @@
             say hello! I'm always open to discussing new projects and ideas.
           </p>
           <div class="contact-details">
-            <div class="contact-item">
+            <div
+              class="contact-item"
+              data-aos="fade-right"
+              data-aos-delay="100"
+            >
               <i class="fas fa-envelope"></i>
               <span>vedantsingh2672@gmail.com</span>
             </div>
-            <div class="contact-item">
+            <div
+              class="contact-item"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
               <i class="fas fa-phone"></i>
               <span>+91 6396******</span>
             </div>
-            <div class="contact-item">
+            <div
+              class="contact-item"
+              data-aos="fade-right"
+              data-aos-delay="300"
+            >
               <i class="fas fa-map-marker-alt"></i>
               <span>UP, India</span>
             </div>
@@ -622,6 +863,8 @@
                 href="https://github.com/vedant2672"
                 class="social-contact-link"
                 target="_blank"
+                data-aos="fade-up"
+                data-aos-delay="100"
               >
                 <i class="fab fa-github"></i>
                 <span>GitHub</span>
@@ -630,11 +873,19 @@
                 href="https://www.linkedin.com/in/vedant-singh-04453b2b0/"
                 class="social-contact-link"
                 target="_blank"
+                data-aos="fade-up"
+                data-aos-delay="200"
               >
                 <i class="fab fa-linkedin"></i>
                 <span>LinkedIn</span>
               </a>
-              <a href="#" class="social-contact-link" target="_blank">
+              <a
+                href="#"
+                class="social-contact-link"
+                target="_blank"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 <i class="fab fa-instagram"></i>
                 <span>Instagram</span>
               </a>
@@ -646,30 +897,31 @@
 
     <footer class="footer">
       <div class="footer-content">
-        <p>&copy; 2023 Vedant Singh. All Rights Reserved.</p>
+        <p>&copy; 2025 Vedant Singh. All Rights Reserved.</p>
         <div class="icons footer-socials">
           <a
             href="#"
             class="social-links"
             data-aos="fade-up"
-            data-aos-anchor-placement="top-bottom"
-            ><i class="fa-brands fa-instagram"></i
+            data-aos-delay="100"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
           ></a>
           <a
             href="https://github.com/vedant2672"
             class="social-links"
             data-aos="fade-up"
             data-aos-delay="200"
-            data-aos-anchor-placement="top-bottom"
-            ><i class="fa-brands fa-github"></i
+            aria-label="GitHub"
+            ><i class="fab fa-github"></i
           ></a>
           <a
             href="https://www.linkedin.com/in/vedant-singh-04453b2b0/"
             class="social-links"
             data-aos="fade-up"
-            data-aos-delay="400"
-            data-aos-anchor-placement="top-bottom"
-            ><i class="fa-brands fa-linkedin"></i
+            data-aos-delay="300"
+            aria-label="LinkedIn"
+            ><i class="fab fa-linkedin"></i
           ></a>
         </div>
         <p class="footer-text">
