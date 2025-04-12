@@ -66,26 +66,98 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Form submission handling
-  const contactForm = document.querySelector(".contact-form");
+  // Enhanced Contact Form Handling
+  const contactForm = document.getElementById("contactForm");
+  const formStatus = document.getElementById("formStatus");
+
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      // Get form values
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
+      // Get form fields
+      const nameField = document.getElementById("name");
+      const emailField = document.getElementById("email");
+      const subjectField = document.getElementById("subject");
+      const messageField = document.getElementById("message");
 
-      // Normally, you would send this data to a server here
-      console.log("Form submitted:", { name, email, message });
+      // Validate form
+      let isValid = true;
+      let errorMessage = "";
 
-      // Show a success message
-      alert("Thank you for your message! I will get back to you soon.");
+      if (!nameField.value.trim()) {
+        isValid = false;
+        errorMessage = "Please enter your name";
+        nameField.focus();
+      } else if (!isValidEmail(emailField.value)) {
+        isValid = false;
+        errorMessage = "Please enter a valid email address";
+        emailField.focus();
+      } else if (!messageField.value.trim()) {
+        isValid = false;
+        errorMessage = "Please enter your message";
+        messageField.focus();
+      }
 
-      // Reset the form
-      contactForm.reset();
+      if (!isValid) {
+        showFormStatus("error", errorMessage);
+        return;
+      }
+
+      // Form is valid, prepare data for submission
+      const formData = {
+        name: nameField.value.trim(),
+        email: emailField.value.trim(),
+        subject: subjectField.value.trim() || "Contact from Portfolio",
+        message: messageField.value.trim(),
+      };
+
+      // Show sending status
+      showFormStatus("loading", "Sending your message...");
+
+      // Simulate form submission (in a real scenario, you'd send to a server)
+      setTimeout(() => {
+        // Simulate successful submission
+        console.log("Form data:", formData);
+
+        // Show success message
+        showFormStatus(
+          "success",
+          "Thank you! Your message has been sent successfully."
+        );
+
+        // Reset form
+        contactForm.reset();
+
+        // Clear status after 5 seconds
+        setTimeout(() => {
+          formStatus.className = "form-status";
+          formStatus.style.display = "none";
+        }, 5000);
+      }, 1500);
     });
+  }
+
+  // Email validation helper function
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  // Helper function to show form status
+  function showFormStatus(type, message) {
+    formStatus.style.display = "block";
+    formStatus.textContent = message;
+
+    // Reset classes
+    formStatus.className = "form-status";
+
+    if (type === "error") {
+      formStatus.classList.add("error");
+    } else if (type === "success") {
+      formStatus.classList.add("success");
+    } else if (type === "loading") {
+      formStatus.classList.add("loading");
+    }
   }
 
   // Handle resume link in navigation
@@ -255,7 +327,7 @@ function setupScrollAnimations() {
 
   // Animate elements on scroll
   const scrollFadeElements = document.querySelectorAll(
-    ".heading, .card, .skill-item, .contact-info, .contact-form"
+    ".heading, .card, .skill-item, .contact-info, .contact-form-container"
   );
 
   const fadeInOnScroll = () => {
@@ -295,7 +367,7 @@ function setupScrollAnimations() {
 // Resume download functionality
 function downloadResume() {
   // Create a link to the PDF file
-  const pdfURL = "Vedant resume.pdf"; // Your uploaded resume
+  const pdfURL = "media/Vedant resume.pdf"; // Updated path to the resume in media folder
 
   // Create a temporary link element
   const link = document.createElement("a");
@@ -306,7 +378,7 @@ function downloadResume() {
   const notification = document.createElement("div");
   notification.textContent = "Downloading resume...";
   notification.style.cssText =
-    "position:fixed; bottom:20px; right:20px; background-color:var(--primary-color); color:var(--text-color); padding:10px 15px; border-radius:5px; box-shadow:0 2px 5px rgba(0,0,0,0.2); z-index:9999;";
+    "position:fixed; bottom:20px; right:20px; background-color:var(--primary-color); color:white; padding:10px 15px; border-radius:5px; box-shadow:0 2px 5px rgba(0,0,0,0.2); z-index:9999;";
   document.body.appendChild(notification);
 
   // Append to the document

@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vedant - Portfolio</title>
+    <title>Vedant Singh | Developer</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -34,6 +34,12 @@
             >Projects</a
           >
           <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+          <a
+            href="#certifications"
+            class="nav-link"
+            data-section="certifications"
+            >Certifications</a
+          >
           <a href="#contact" class="nav-link" data-section="contact">Contact</a>
           <button
             id="darkModeToggle"
@@ -52,42 +58,62 @@
     </nav>
 
     <div id="about" class="info section">
-      <div class="heading" data-aos="fade-up">
-        <h1 class="gradient-text">
-          Hey World, I am <span class="animated-text">Vedant!</span>
-        </h1>
+      <div class="heading">
+        <h1>Hello, I'm <span class="name-highlight">Vedant Singh</span></h1>
+        <p class="title-text">Full-Stack Developer</p>
       </div>
       <div class="about-container">
-        <img
-          src="vedant.jpg"
-          alt="Vedant"
-          class="displayPic rounded-circle shadow-lg"
-          data-aos="zoom-in"
-          data-aos-delay="300"
-        />
-        <div class="info-about" data-aos="fade-up" data-aos-delay="500">
+        <div class="profile-column">
+          <img src="media/vedant.jpg" alt="Vedant Singh" class="displayPic" />
+          <div class="social-profile-links">
+            <a
+              href="https://github.com/vedant2672"
+              class="social-profile-link"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/vedant-singh-04453b2b0/"
+              class="social-profile-link"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a
+              href="#"
+              class="social-profile-link"
+              target="_blank"
+              aria-label="Email"
+            >
+              <i class="far fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+        <div class="info-about">
           <p class="para-about">
-            Hey there! I'm a
-            <span class="highlight">B.Tech CSE student</span> who's genuinely
-            passionate about coding and building cool things with tech. I love
-            diving into new tools, learning how things work under the hood, and
-            turning ideas into real, functional projects. Whether it's working
-            on a web app, exploring AI, or just experimenting with code — I
-            enjoy the process as much as the result. <br /><br />
-            When I'm not coding, you'll probably find me at the
-            <span class="highlight">gym</span> lifting weights or chilling out
-            watching sports or gaming. Staying active helps me stay focused, and
-            I think having that balance between tech and fitness keeps me
-            grounded and motivated.
+            I'm a <span class="highlight">B.Tech CSE student</span> passionate
+            about creating elegant, functional web applications with clean code.
+            My expertise spans React, Node.js, and modern JavaScript, with a
+            focus on building responsive, user-friendly interfaces and robust
+            backend systems. <br /><br />
+            When I'm not coding, I maintain balance through fitness and sports—a
+            disciplined approach I bring to both my personal and professional
+            life.
           </p>
-          <div class="resume-download" data-aos="fade-up" data-aos-delay="700">
+          <div class="hero-cta">
             <button
               id="resumeDownloadBtn"
-              class="download-btn btn btn-primary btn-lg shadow-sm"
+              class="download-btn"
               onclick="downloadResume()"
             >
-              <i class="fas fa-download"></i> Download My Resume
+              <i class="fas fa-file-download"></i> Resume
             </button>
+            <a href="#projects" class="view-work-btn">
+              View My Work <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -117,7 +143,7 @@
         >
           <div class="project-card">
             <div class="project-image">
-              <img src="wanderlust.png" alt="Wanderlust project" />
+              <img src="media/wanderlust.png" alt="Wanderlust project" />
               <div class="project-overlay">
                 <div class="project-preview">
                   <div class="overlay-tech-stack">
@@ -157,7 +183,7 @@
         >
           <div class="project-card">
             <div class="project-image">
-              <img src="Zerodha2.png" alt="Zerodha project" />
+              <img src="media/Zerodha2.png" alt="Zerodha project" />
               <div class="project-overlay">
                 <div class="project-preview">
                   <div class="overlay-tech-stack">
@@ -197,7 +223,7 @@
         >
           <div class="project-card">
             <div class="project-image">
-              <img src="WeatherApp.png" alt="Weather App" />
+              <img src="media/WeatherApp.png" alt="Weather App" />
               <div class="project-overlay">
                 <div class="project-preview">
                   <div class="overlay-tech-stack">
@@ -231,7 +257,7 @@
         >
           <div class="project-card">
             <div class="project-image">
-              <img src="ToDoList.png" alt="To-Do List" />
+              <img src="media/ToDoList.png" alt="To-Do List" />
               <div class="project-overlay">
                 <div class="project-preview">
                   <div class="overlay-tech-stack">
@@ -262,7 +288,7 @@
         >
           <div class="project-card">
             <div class="project-image">
-              <img src="spotify.png" alt="Spotify clone" />
+              <img src="media/spotify.png" alt="Spotify clone" />
               <div class="project-overlay">
                 <div class="project-preview">
                   <div class="overlay-tech-stack">
@@ -317,7 +343,7 @@
             <div class="modal-body">
               <div class="modal-image-container">
                 <div class="modal-image">
-                  <img src="wanderlust.png" alt="Wanderlust project" />
+                  <img src="media/wanderlust.png" alt="Wanderlust project" />
                 </div>
                 <div class="tech-overview">
                   <h4>Technologies Used</h4>
@@ -418,7 +444,7 @@
             <div class="modal-body">
               <div class="modal-image-container">
                 <div class="modal-image">
-                  <img src="Zerodha2.png" alt="Zerodha Clone project" />
+                  <img src="media/Zerodha2.png" alt="Zerodha Clone project" />
                 </div>
                 <div class="tech-overview">
                   <h4>Technologies Used</h4>
@@ -507,7 +533,7 @@
             <div class="modal-body">
               <div class="modal-image-container">
                 <div class="modal-image">
-                  <img src="WeatherApp.png" alt="Weather App project" />
+                  <img src="media/WeatherApp.png" alt="Weather App project" />
                 </div>
                 <div class="tech-overview">
                   <h4>Technologies Used</h4>
@@ -593,7 +619,7 @@
             <div class="modal-body">
               <div class="modal-image-container">
                 <div class="modal-image">
-                  <img src="ToDoList.png" alt="To-Do List" />
+                  <img src="media/ToDoList.png" alt="To-Do List" />
                 </div>
                 <div class="tech-overview">
                   <h4>Technologies Used</h4>
@@ -675,7 +701,7 @@
             <div class="modal-body">
               <div class="modal-image-container">
                 <div class="modal-image">
-                  <img src="spotify.png" alt="Spotify clone" />
+                  <img src="media/spotify.png" alt="Spotify clone" />
                 </div>
                 <div class="tech-overview">
                   <h4>Technologies Used</h4>
@@ -740,6 +766,106 @@
         </div>
       </div>
     </div>
+    <hr class="custom-divider" />
+
+    <div id="certifications" class="certifications section">
+      <div class="heading" data-aos="fade-up">
+        <h1 class="gradient-text">Certifications</h1>
+      </div>
+      <div class="certifications-container">
+        <!-- Certification 1 -->
+        <div class="certification-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="certification-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="certification-content">
+            <h3>Delta (Full Stack Web Development)</h3>
+            <div class="certification-details">
+              <p class="cert-issuer">Apna College</p>
+              <p class="cert-date">March 2025</p>
+            </div>
+            <p class="cert-description">
+              Comprehensive full-stack web development course covering HTML,
+              CSS, JavaScript, React, Node.js, and MongoDB. Developed practical
+              skills through hands-on projects and real-world applications.
+            </p>
+            <div class="certification-actions">
+              <a
+                href="media/Development Certificate.pdf"
+                class="cert-link"
+                target="_blank"
+              >
+                View Certificate <i class="fas fa-external-link-alt"></i>
+              </a>
+              <p class="cert-credential">
+                Credential ID: 67dff1775f92cd23160035a4
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certification 2 -->
+        <div class="certification-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="certification-icon">
+            <i class="fab fa-java"></i>
+          </div>
+          <div class="certification-content">
+            <h3>Core Java - Summer Internship</h3>
+            <div class="certification-details">
+              <p class="cert-issuer">Azure Skynet Solutions Pvt. Ltd.</p>
+              <p class="cert-date">June - July 2024</p>
+            </div>
+            <p class="cert-description">
+              Completed intensive summer internship program focused on Core Java
+              development. Gained hands-on experience with Java programming
+              fundamentals, object-oriented principles, and industry best
+              practices.
+            </p>
+            <div class="certification-actions">
+              <a
+                href="media/Internship Certificate.jpg"
+                class="cert-link"
+                target="_blank"
+              >
+                View Certificate <i class="fas fa-external-link-alt"></i>
+              </a>
+              <p class="cert-credential">Sr. No. AS/OTP/24/1009897</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certification 3 -->
+        <div class="certification-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="certification-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="certification-content">
+            <h3>C++ Training</h3>
+            <div class="certification-details">
+              <p class="cert-issuer">Spoken Tutorial Project, IIT Bombay</p>
+              <p class="cert-date">January 2025</p>
+            </div>
+            <p class="cert-description">
+              Successfully completed C++ training organized by Teerthanker
+              Mahaveer University with course material provided by the Spoken
+              Tutorial Project, IIT Bombay. Passed the online examination with a
+              score of 75.00%.
+            </p>
+            <div class="certification-actions">
+              <a
+                href="media/C++ certificate.pdf"
+                class="cert-link"
+                target="_blank"
+              >
+                View Certificate <i class="fas fa-external-link-alt"></i>
+              </a>
+              <p class="cert-credential">Credits: 2 | Score: 75.00%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <hr class="custom-divider" />
 
     <div id="skills" class="skills section">
@@ -827,67 +953,43 @@
         <div class="contact-info" data-aos="fade-up">
           <h3>Let's Connect</h3>
           <p>
-            Feel free to reach out for collaborations, opportunities, or just to
-            say hello! I'm always open to discussing new projects and ideas.
+            I'm always interested in new opportunities, collaborations, and
+            connecting with fellow developers. Feel free to reach out through
+            any of the channels below.
           </p>
           <div class="contact-details">
-            <div
-              class="contact-item"
-              data-aos="fade-right"
-              data-aos-delay="100"
-            >
+            <div class="contact-item">
               <i class="fas fa-envelope"></i>
-              <span>vedantsingh2672@gmail.com</span>
+              <span>vedant2672@gmail.com</span>
             </div>
-            <div
-              class="contact-item"
-              data-aos="fade-right"
-              data-aos-delay="200"
-            >
+            <!-- <div class="contact-item">
               <i class="fas fa-phone"></i>
-              <span>+91 6396******</span>
-            </div>
-            <div
-              class="contact-item"
-              data-aos="fade-right"
-              data-aos-delay="300"
-            >
+              <span>+91 9867321233</span>
+            </div> -->
+            <div class="contact-item">
               <i class="fas fa-map-marker-alt"></i>
-              <span>UP, India</span>
+              <span>Uttar Pradesh, India</span>
             </div>
           </div>
           <div class="social-contact-links">
-            <h4>Find me on social media</h4>
+            <h4>Find me on</h4>
             <div class="social-icons">
               <a
                 href="https://github.com/vedant2672"
                 class="social-contact-link"
                 target="_blank"
-                data-aos="fade-up"
-                data-aos-delay="100"
               >
-                <i class="fab fa-github"></i>
-                <span>GitHub</span>
+                <i class="fab fa-github"></i> GitHub
               </a>
               <a
                 href="https://www.linkedin.com/in/vedant-singh-04453b2b0/"
                 class="social-contact-link"
                 target="_blank"
-                data-aos="fade-up"
-                data-aos-delay="200"
               >
-                <i class="fab fa-linkedin"></i>
-                <span>LinkedIn</span>
+                <i class="fab fa-linkedin"></i> LinkedIn
               </a>
-              <a
-                href="#"
-                class="social-contact-link"
-                target="_blank"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <i class="fab fa-instagram"></i>
-                <span>Instagram</span>
+              <a href="#" class="social-contact-link">
+                <i class="fab fa-instagram"></i> Instagram
               </a>
             </div>
           </div>
