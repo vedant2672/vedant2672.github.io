@@ -367,7 +367,7 @@ function setupScrollAnimations() {
 // Resume download functionality
 function downloadResume() {
   // Create a link to the PDF file
-  const pdfURL = "media/Vedant resume.pdf"; // Updated path to the resume in media folder
+  const pdfURL = "media/Vedant_Singh_Resume.pdf"; // Updated path to the resume in media folder
 
   // Create a temporary link element
   const link = document.createElement("a");
