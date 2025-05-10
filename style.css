@@ -1790,8 +1790,8 @@ a:hover {
 /* Certifications Section - Clean, Professional Style */
 .certifications {
   background-color: var(--bg-color);
-  padding: 120px 0 80px;
   position: relative;
+  /* Using section padding instead of custom padding to maintain consistency */
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -1802,12 +1802,11 @@ a:hover {
 }
 
 .certifications-container {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 var(--space-lg);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-xl);
+  width: 100%;
+  margin-top: var(--space-xl);
 }
 
 .certifications .heading {
@@ -1835,32 +1834,34 @@ a:hover {
 
 .certification-card {
   display: flex;
+  flex-direction: column;
   background-color: var(--card-bg);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid var(--muted-bg);
   overflow: hidden;
+  height: 100%;
 }
 
 .certification-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
 }
 
 .certification-icon {
-  flex: 0 0 70px;
+  padding: var(--space-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--primary-light);
   color: var(--primary-color);
-  font-size: 1.8rem;
+  font-size: 2.5rem;
+  margin: var(--space-sm) 0;
 }
 
 .certification-content {
   flex: 1;
-  padding: var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
   display: flex;
   flex-direction: column;
 }
@@ -1870,24 +1871,28 @@ a:hover {
   font-weight: 600;
   color: var(--text-color);
   font-size: var(--text-lg);
+  text-align: center;
 }
 
 .certification-details {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: var(--space-xs);
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--space-sm);
   font-size: var(--text-sm);
 }
 
 .cert-issuer {
   font-weight: 500;
   color: var(--text-muted);
-  margin: 0;
+  margin: 0 0 var(--space-xs) 0;
+  text-align: center;
 }
 
 .cert-date {
   color: var(--text-light);
   margin: 0;
+  text-align: center;
 }
 
 .cert-description {
@@ -1895,13 +1900,15 @@ a:hover {
   color: var(--text-muted);
   font-size: var(--text-sm);
   line-height: 1.6;
+  flex-grow: 1; /* Allow description to fill available space */
 }
 
 .certification-actions {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  margin-top: var(--space-md);
+  justify-content: center;
+  margin-top: auto;
   border-top: 1px solid var(--muted-bg);
   padding-top: var(--space-md);
 }
@@ -1912,8 +1919,12 @@ a:hover {
   gap: 8px;
   font-size: var(--text-sm);
   font-weight: 500;
-  color: var(--primary-color);
+  color: #fff;
+  background-color: var(--primary-color);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
   transition: all 0.2s ease;
+  margin-bottom: var(--space-sm);
 }
 
 .cert-link i {
@@ -1922,7 +1933,10 @@ a:hover {
 }
 
 .cert-link:hover {
-  color: var(--primary-dark);
+  background-color: var(--primary-dark);
+  color: white; /* Ensure text remains white on hover */
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .cert-link:hover i {
@@ -1935,25 +1949,32 @@ a:hover {
   font-family: var(--font-mono);
 }
 
+/* Dark mode tweaks */
+.dark-theme .certification-card {
+  border-color: var(--muted-bg);
+  background-color: var(--card-bg);
+}
+
+.dark-theme .cert-link {
+  background-color: var(--primary-light);
+  color: var(--bg-color);
+}
+
+.dark-theme .cert-link:hover {
+  background-color: var(--primary-dark);
+  color: var(--bg-color); /* Ensure good contrast in dark mode */
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
-  .certifications .heading {
-    text-align: center;
-  }
-
-  .certifications .heading h1 {
-    text-align: center;
-  }
-
-  .certifications .heading h1::after {
-    left: 50%;
-    transform: translateX(-50%);
+  .certifications-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
 
   .certification-card {
     flex-direction: column;
   }
-
   .certification-icon {
     height: 60px;
     width: 100%;
@@ -1961,8 +1982,14 @@ a:hover {
 
   .certification-actions {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--space-sm);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .certifications-container {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
