@@ -23,6 +23,7 @@
     />
   </head>
   <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav class="navbar" id="main-nav">
       <div class="navbar-container">
         <a href="#" class="logo-link">
@@ -121,7 +122,7 @@
 
     <hr class="custom-divider" />
 
-    <div id="projects" class="projects section">
+  <div id="projects" class="projects section" id="main-content">
       <div class="heading" data-aos="fade-up">
         <h1>Projects</h1>
       </div>
@@ -135,6 +136,47 @@
       </div>
 
       <div class="project-grid">
+        <!-- Project 1 (ProConnect moved to top) -->
+        <!-- ProConnect - previously Project 6 -->
+        <div
+          class="project-item fullstack"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div class="project-card">
+            <div class="project-image">
+              <img src="media/ProConnect.png" alt="ProConnect platform" loading="lazy" onerror="this.src='https://via.placeholder.com/600x360?text=ProConnect+Image+Pending';" />
+              <div class="project-overlay">
+                <div class="project-preview">
+                  <div class="overlay-tech-stack">
+                    <span class="tech-badge">MongoDB</span>
+                    <span class="tech-badge">Express</span>
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Next.js</span>
+                    <span class="tech-badge">Redux</span>
+                  </div>
+                  <button class="preview-btn" data-project="project6">
+                    View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 id="project6-title">ProConnect</h3>
+              <div class="tech-stack" id="project6-tech">
+                <span class="tech-badge">Fullstack</span>
+                <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">Express</span>
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Next.js</span>
+                <span class="tech-badge">Redux</span>
+              </div>
+              <p id="project6-summary">A professional networking platform with connections, posts, comments, and built‑in resume download functionality.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 (formerly Project 1) -->
         <!-- Project 1 -->
         <div
           class="project-item fullstack"
@@ -143,7 +185,7 @@
         >
           <div class="project-card">
             <div class="project-image">
-              <img src="media/wanderlust.png" alt="Wanderlust project" />
+              <img src="media/wanderlust.png" alt="Wanderlust project" loading="lazy" />
               <div class="project-overlay">
                 <div class="project-preview">
                   <div class="overlay-tech-stack">
@@ -183,7 +225,7 @@
         >
           <div class="project-card">
             <div class="project-image">
-              <img src="media/Zerodha2.png" alt="Zerodha project" />
+              <img src="media/Zerodha2.png" alt="Zerodha project" loading="lazy" />
               <div class="project-overlay">
                 <div class="project-preview">
                   <div class="overlay-tech-stack">
@@ -215,6 +257,39 @@
           </div>
         </div>
 
+        <!-- Project 7 - Therapist Website -->
+        <div
+          class="project-item frontend"
+          data-aos="fade-up"
+          data-aos-delay="120"
+        >
+          <div class="project-card">
+            <div class="project-image">
+              <img src="media/Therapist_Website.png" alt="Therapist Website" loading="lazy" onerror="this.src='https://via.placeholder.com/600x360?text=Therapist+Website';" />
+              <div class="project-overlay">
+                <div class="project-preview">
+                  <div class="overlay-tech-stack">
+                    <span class="tech-badge">Next.js</span>
+                    <span class="tech-badge">Tailwind CSS</span>
+                  </div>
+                  <button class="preview-btn" data-project="project7">
+                    View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 id="project7-title">Therapist Website</h3>
+              <div class="tech-stack" id="project7-tech">
+                <span class="tech-badge">Frontend</span>
+                <span class="tech-badge">Next.js</span>
+                <span class="tech-badge">Tailwind CSS</span>
+              </div>
+              <p id="project7-summary">Therapist website built with Next.js and Tailwind CSS focusing on clean UI and accessibility.</p>
+            </div>
+          </div>
+        </div>
+
         <!-- Project-3 -->
         <div
           class="project-item frontend"
@@ -223,7 +298,7 @@
         >
           <div class="project-card">
             <div class="project-image">
-              <img src="media/WeatherApp.png" alt="Weather App" />
+              <img src="media/WeatherApp.png" alt="Weather App" loading="lazy" />
               <div class="project-overlay">
                 <div class="project-preview">
                   <div class="overlay-tech-stack">
@@ -257,7 +332,7 @@
         >
           <div class="project-card">
             <div class="project-image">
-              <img src="media/ToDoList.png" alt="To-Do List" />
+              <img src="media/ToDoList.png" alt="To-Do List" loading="lazy" />
               <div class="project-overlay">
                 <div class="project-preview">
                   <div class="overlay-tech-stack">
@@ -288,7 +363,7 @@
         >
           <div class="project-card">
             <div class="project-image">
-              <img src="media/spotify.png" alt="Spotify clone" />
+              <img src="media/spotify.png" alt="Spotify clone" loading="lazy" />
               <div class="project-overlay">
                 <div class="project-preview">
                   <div class="overlay-tech-stack">
@@ -312,60 +387,38 @@
             </div>
           </div>
         </div>
+
       </div>
 
-      <!-- Project Modals -->
-      <div class="project-modal-container">
-        <!-- Project 1 Modal -->
-        <div id="project1-modal" class="project-modal">
+  <!-- (ProConnect block relocated above; duplicate removed) -->
+        <!-- Project 1 Modal (Wanderlust) -->
+    <div id="project1-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="project1-title">
           <div class="modal-content">
             <span class="close-modal">&times;</span>
             <div class="modal-header">
-              <h2>Wanderlust</h2>
+      <h2 id="project1-title">Wanderlust</h2>
               <div class="modal-tags">
-                <span class="tech-badge"
-                  ><i class="fab fa-node-js"></i> MongoDB</span
-                >
-                <span class="tech-badge"
-                  ><i class="fas fa-server"></i> Express</span
-                >
-                <span class="tech-badge"
-                  ><i class="fab fa-react"></i> React</span
-                >
-                <span class="tech-badge"
-                  ><i class="fab fa-node"></i> Node.js</span
-                >
-                <span class="tech-badge"
-                  ><i class="fas fa-layer-group"></i> Fullstack</span
-                >
+                <span class="tech-badge"><i class="fab fa-node-js"></i> MongoDB</span>
+                <span class="tech-badge"><i class="fas fa-server"></i> Express</span>
+                <span class="tech-badge"><i class="fab fa-react"></i> React</span>
+                <span class="tech-badge"><i class="fab fa-node"></i> Node.js</span>
+                <span class="tech-badge"><i class="fas fa-layer-group"></i> Fullstack</span>
               </div>
             </div>
             <div class="modal-body">
               <div class="modal-image-container">
                 <div class="modal-image">
-                  <img src="media/wanderlust.png" alt="Wanderlust project" />
+                  <img src="media/wanderlust.png" alt="Wanderlust project" loading="lazy" />
                 </div>
                 <div class="tech-overview">
                   <h4>Technologies Used</h4>
                   <div class="tech-grid">
-                    <span class="tech-item"
-                      ><i class="fab fa-node-js"></i> MongoDB</span
-                    >
-                    <span class="tech-item"
-                      ><i class="fas fa-server"></i> Express</span
-                    >
-                    <span class="tech-item"
-                      ><i class="fab fa-react"></i> React</span
-                    >
-                    <span class="tech-item"
-                      ><i class="fab fa-node"></i> Node.js</span
-                    >
-                    <span class="tech-item"
-                      ><i class="fas fa-map-marked-alt"></i> Mapbox API</span
-                    >
-                    <span class="tech-item"
-                      ><i class="fas fa-cloud"></i> Cloudinary</span
-                    >
+                    <span class="tech-item"><i class="fab fa-node-js"></i> MongoDB</span>
+                    <span class="tech-item"><i class="fas fa-server"></i> Express</span>
+                    <span class="tech-item"><i class="fab fa-react"></i> React</span>
+                    <span class="tech-item"><i class="fab fa-node"></i> Node.js</span>
+                    <span class="tech-item"><i class="fas fa-map-marked-alt"></i> Mapbox API</span>
+                    <span class="tech-item"><i class="fas fa-cloud"></i> Cloudinary</span>
                   </div>
                 </div>
               </div>
@@ -373,13 +426,9 @@
                 <div class="modal-section">
                   <h3><i class="fas fa-info-circle"></i> Project Overview</h3>
                   <p>
-                    A comprehensive travel website that helps users plan their
-                    trips and explore new destinations. The platform includes
-                    features like user authentication, interactive maps, booking
-                    systems, and personalized recommendations.
+                    A comprehensive travel website that helps users plan their trips and explore new destinations. The platform includes features like user authentication, interactive maps, booking systems, and personalized recommendations.
                   </p>
                 </div>
-
                 <div class="modal-section">
                   <h3><i class="fas fa-list-ul"></i> Key Features</h3>
                   <ul class="feature-list">
@@ -390,22 +439,14 @@
                     <li>Personalized trip recommendations</li>
                   </ul>
                 </div>
-
                 <div class="modal-section">
                   <h3><i class="fas fa-code"></i> Technical Approach</h3>
                   <p>
-                    Built with the MERN stack (MongoDB, Express, React, Node.js)
-                    with a focus on performance and responsive design. The
-                    application implements RESTful API patterns and uses modern
-                    JavaScript practices.
+                    Built with the MERN stack (MongoDB, Express, React, Node.js) with a focus on performance and responsive design. The application implements RESTful API patterns and uses modern JavaScript practices.
                   </p>
                 </div>
-
                 <div class="modal-links">
-                  <a
-                    href="https://wanderlust-imsq.onrender.com/"
-                    class="modal-btn primary-btn"
-                  >
+                  <a href="https://wanderlust-imsq.onrender.com/" class="modal-btn primary-btn" target="_blank" rel="noopener noreferrer">
                     <i class="fas fa-globe"></i> Live Demo
                   </a>
                   <a href="#" class="modal-btn secondary-btn">
@@ -418,11 +459,11 @@
         </div>
 
         <!-- Project 2 Modal -->
-        <div id="project2-modal" class="project-modal">
+    <div id="project2-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="project2-title">
           <div class="modal-content">
             <span class="close-modal">&times;</span>
             <div class="modal-header">
-              <h2>Zerodha Clone – Stock Trading Dashboard</h2>
+      <h2 id="project2-title">Zerodha Clone – Stock Trading Dashboard</h2>
               <div class="modal-tags">
                 <span class="tech-badge"
                   ><i class="fab fa-node-js"></i> MongoDB</span
@@ -444,7 +485,7 @@
             <div class="modal-body">
               <div class="modal-image-container">
                 <div class="modal-image">
-                  <img src="media/Zerodha2.png" alt="Zerodha Clone project" />
+                  <img src="media/Zerodha2.png" alt="Zerodha Clone project" loading="lazy" />
                 </div>
                 <div class="tech-overview">
                   <h4>Technologies Used</h4>
@@ -518,11 +559,11 @@
         </div>
 
         <!-- Project 3 Modal -->
-        <div id="project3-modal" class="project-modal">
+    <div id="project3-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="project3-title">
           <div class="modal-content">
             <span class="close-modal">&times;</span>
             <div class="modal-header">
-              <h2>Weather App</h2>
+      <h2 id="project3-title">Weather App</h2>
               <div class="modal-tags">
                 <span class="tech-badge"
                   ><i class="fab fa-react"></i> React</span
@@ -536,7 +577,7 @@
             <div class="modal-body">
               <div class="modal-image-container">
                 <div class="modal-image">
-                  <img src="media/WeatherApp.png" alt="Weather App project" />
+                  <img src="media/WeatherApp.png" alt="Weather App project" loading="lazy" />
                 </div>
                 <div class="tech-overview">
                   <h4>Technologies Used</h4>
@@ -605,11 +646,11 @@
         </div>
 
         <!-- Project 4 Modal -->
-        <div id="project4-modal" class="project-modal">
+    <div id="project4-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="project4-title">
           <div class="modal-content">
             <span class="close-modal">&times;</span>
             <div class="modal-header">
-              <h2>To-Do List</h2>
+      <h2 id="project4-title">To-Do List</h2>
               <div class="modal-tags">
                 <span class="tech-badge"
                   ><i class="fab fa-react"></i> React</span
@@ -622,7 +663,7 @@
             <div class="modal-body">
               <div class="modal-image-container">
                 <div class="modal-image">
-                  <img src="media/ToDoList.png" alt="To-Do List" />
+                  <img src="media/ToDoList.png" alt="To-Do List" loading="lazy" />
                 </div>
                 <div class="tech-overview">
                   <h4>Technologies Used</h4>
@@ -684,11 +725,11 @@
         </div>
 
         <!-- Project 5 Modal -->
-        <div id="project5-modal" class="project-modal">
+    <div id="project5-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="project5-title">
           <div class="modal-content">
             <span class="close-modal">&times;</span>
             <div class="modal-header">
-              <h2>Spotify Clone</h2>
+      <h2 id="project5-title">Spotify Clone</h2>
               <div class="modal-tags">
                 <span class="tech-badge"
                   ><i class="fab fa-html5"></i> HTML</span
@@ -704,7 +745,7 @@
             <div class="modal-body">
               <div class="modal-image-container">
                 <div class="modal-image">
-                  <img src="media/spotify.png" alt="Spotify clone" />
+                  <img src="media/spotify.png" alt="Spotify clone" loading="lazy" />
                 </div>
                 <div class="tech-overview">
                   <h4>Technologies Used</h4>
@@ -767,8 +808,266 @@
             </div>
           </div>
         </div>
+
+        <!-- Project 6 Modal - ProConnect -->
+    <div id="project6-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="project6-title-heading">
+          <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+      <h2 id="project6-title-heading">
+                ProConnect – Professional Networking Platform
+              </h2>
+              <div class="modal-tags" id="project6-modal-tags">
+                <span class="tech-badge"
+                  ><i class="fas fa-layer-group"></i> Fullstack</span
+                >
+                <span class="tech-badge"
+                  ><i class="fab fa-node-js"></i> MongoDB</span
+                >
+                <span class="tech-badge"
+                  ><i class="fas fa-server"></i> Express</span
+                >
+                <span class="tech-badge"
+                  ><i class="fab fa-react"></i> React</span
+                >
+                <span class="tech-badge"
+                  ><i class="fas fa-code"></i> Next.js</span
+                >
+                <span class="tech-badge"
+                  ><i class="fas fa-project-diagram"></i> Redux</span
+                >
+              </div>
+            </div>
+            <div class="modal-body">
+              <div class="modal-image-container">
+                <div class="modal-image">
+                  <img
+                    id="project6-image"
+                    src="media/ProConnect.png" loading="lazy"
+                    alt="ProConnect Screenshot"
+                    onerror="this.src='https://via.placeholder.com/800x450?text=ProConnect+Screenshot+Pending';"
+                  />
+                </div>
+                <div class="tech-overview">
+                  <h4>Technologies Used</h4>
+                  <div class="tech-grid" id="project6-tech-list">
+                    <span class="tech-item"
+                      ><i class="fab fa-node-js"></i> MongoDB</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fas fa-server"></i> Express</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fab fa-react"></i> React</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fas fa-code"></i> Next.js</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fas fa-project-diagram"></i> React-Redux</span
+                    >
+                    <span class="tech-item"
+                      ><i class="fas fa-cloud"></i> Cloudinary</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="modal-details">
+                <div class="modal-section">
+                  <h3><i class="fas fa-info-circle"></i> Project Overview</h3>
+                  <p id="project6-description">
+                    Dynamic professional networking platform enabling users to
+                    build profiles, connect, share posts, comment, and showcase
+                    career milestones. Includes a unique resume download feature
+                    for streamlined professional sharing.
+                  </p>
+                </div>
+                <div class="modal-section">
+                  <h3><i class="fas fa-list-ul"></i> Key Features</h3>
+                  <ul class="feature-list" id="project6-features">
+                    <li>Create and personalize account/profile</li>
+                    <li>Connect with other professionals</li>
+                    <li>Share posts & engage through comments</li>
+                    <li>Add work history & education timeline</li>
+                    <li>Resume download functionality</li>
+                    <li>Cloud-based media storage (Cloudinary)</li>
+                  </ul>
+                </div>
+                <div class="modal-section">
+                  <h3><i class="fas fa-code"></i> Technical Approach</h3>
+                  <p id="project6-tech-approach">
+                    Built using the MERN stack with Next.js for server-side
+                    rendering and improved SEO. React-Redux manages global state
+                    for authentication, connections, and post feeds. Media
+                    assets (profile images, resumes) are stored and delivered
+                    via Cloudinary. Modular REST APIs handle user, post, and
+                    connection logic with secure middleware.
+                  </p>
+                </div>
+                <div class="modal-links" id="project6-links">
+                  <a
+                    href="https://pro-connect-teal.vercel.app/"
+                    class="modal-btn primary-btn"
+                    id="project6-live-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fas fa-globe"></i> Live Demo
+                  </a>
+                  <!-- Code link intentionally omitted per user instruction -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 7 Modal - Therapist Website -->
+    <div id="project7-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="project7-title-heading">
+          <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+      <h2 id="project7-title-heading">Therapist Website</h2>
+              <div class="modal-tags" id="project7-modal-tags">
+                <span class="tech-badge"><i class="fas fa-desktop"></i> Frontend</span>
+                <span class="tech-badge"><i class="fas fa-code"></i> Next.js</span>
+                <span class="tech-badge"><i class="fas fa-wind"></i> Tailwind CSS</span>
+              </div>
+            </div>
+            <div class="modal-body">
+              <div class="modal-image-container">
+                <div class="modal-image">
+                  <img id="project7-image" src="media/Therapist_Website.png" alt="Therapist Website Screenshot" loading="lazy" onerror="this.src='https://via.placeholder.com/800x450?text=Therapist+Website';" />
+                </div>
+                <div class="tech-overview">
+                  <h4>Technologies Used</h4>
+                  <div class="tech-grid" id="project7-tech-list">
+                    <span class="tech-item"><i class="fas fa-code"></i> Next.js</span>
+                    <span class="tech-item"><i class="fas fa-wind"></i> Tailwind CSS</span>
+                    <span class="tech-item"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+                    <span class="tech-item"><i class="fas fa-universal-access"></i> Accessibility</span>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-details">
+                <div class="modal-section">
+                  <h3><i class="fas fa-info-circle"></i> Project Overview</h3>
+                  <p id="project7-description">A clean, responsive therapist website built with Next.js and Tailwind CSS to present services, qualifications, and contact pathways clearly for potential clients.</p>
+                </div>
+                <div class="modal-section">
+                  <h3><i class="fas fa-list-ul"></i> Key Features</h3>
+                  <ul class="feature-list" id="project7-features">
+                    <li>Service sections with concise descriptions</li>
+                    <li>Responsive layout optimized for mobile & desktop</li>
+                    <li>Fast navigation via Next.js routing</li>
+                    <li>Accessible, semantic components</li>
+                    <li>Contact / CTA emphasis for conversions</li>
+                  </ul>
+                </div>
+                <div class="modal-section">
+                  <h3><i class="fas fa-code"></i> Technical Approach</h3>
+                  <p id="project7-tech-approach">Implemented using Next.js pages for SEO-friendly routing and Tailwind CSS utility classes for rapid styling. Focused on performance, accessibility (ARIA & landmarks), and a scalable component structure ready for dynamic content.</p>
+                </div>
+                <div class="modal-links" id="project7-links">
+                  <a href="https://therapist-website-v8fg.vercel.app/" class="modal-btn primary-btn" id="project7-live-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-globe"></i> Live Demo
+                  </a>
+                  <a href="https://github.com/vedant2672/Therapist-Website" class="modal-btn secondary-btn" id="project7-code-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <!-- Skills moved above Certifications -->
+    <hr class="custom-divider" />
+
+    <div id="skills" class="skills section">
+      <div class="heading" data-aos="fade-up">
+        <h1 class="gradient-text">Skills</h1>
+      </div>
+      <div class="skills-container">
+        <!-- Frontend Category -->
+        <div class="skills-category">
+          <h3 class="category-title" data-aos="fade-right">Frontend</h3>
+          <div class="skill-grid">
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+              <i class="fab fa-html5 skill-icons" title="HTML"></i>
+              <span class="skill-name">HTML</span>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
+              <i class="fab fa-css3-alt skill-icons" title="CSS"></i>
+              <span class="skill-name">CSS</span>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+              <i class="fab fa-js skill-icons" title="JavaScript"></i>
+              <span class="skill-name">JavaScript</span>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="250">
+              <i class="fab fa-react skill-icons" title="React"></i>
+              <span class="skill-name">React</span>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+              <i class="fas fa-code skill-icons" title="Next.js"></i>
+              <span class="skill-name">Next.js</span>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="350">
+              <i class="fas fa-wind skill-icons" title="Tailwind CSS"></i>
+              <span class="skill-name">Tailwind CSS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend Category -->
+        <div class="skills-category">
+          <h3 class="category-title" data-aos="fade-right">Backend</h3>
+          <div class="skill-grid">
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+              <i class="fab fa-java skill-icons" title="Java"></i>
+              <span class="skill-name">Java</span>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
+              <i class="fab fa-node-js skill-icons" title="Node.js"></i>
+              <span class="skill-name">Node.js</span>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+              <i class="fas fa-server skill-icons" title="Express"></i>
+              <span class="skill-name">Express</span>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="250">
+              <i class="fas fa-database skill-icons" title="MongoDB"></i>
+              <span class="skill-name">MongoDB</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Skills Category -->
+        <div class="skills-category">
+          <h3 class="category-title" data-aos="fade-right">Tools & Other</h3>
+          <div class="skill-grid">
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+              <i class="fab fa-git-alt skill-icons" title="Git"></i>
+              <span class="skill-name">Git</span>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
+              <i class="fab fa-github skill-icons" title="GitHub"></i>
+              <span class="skill-name">GitHub</span>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+              <i class="fas fa-terminal skill-icons" title="Command Line"></i>
+              <span class="skill-name">Command Line</span>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="250">
+              <i class="fas fa-code skill-icons" title="VS Code"></i>
+              <span class="skill-name">VS Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <hr class="custom-divider" />
 
     <div id="certifications" class="certifications section">
@@ -988,84 +1287,7 @@
       </div>
     </div>
 
-    <hr class="custom-divider" />
-
-    <div id="skills" class="skills section">
-      <div class="heading" data-aos="fade-up">
-        <h1 class="gradient-text">Skills</h1>
-      </div>
-      <div class="skills-container">
-        <!-- Frontend Category -->
-        <div class="skills-category">
-          <h3 class="category-title" data-aos="fade-right">Frontend</h3>
-          <div class="skill-grid">
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
-              <i class="fab fa-html5 skill-icons" title="HTML"></i>
-              <span class="skill-name">HTML</span>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
-              <i class="fab fa-css3-alt skill-icons" title="CSS"></i>
-              <span class="skill-name">CSS</span>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
-              <i class="fab fa-js skill-icons" title="JavaScript"></i>
-              <span class="skill-name">JavaScript</span>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="250">
-              <i class="fab fa-react skill-icons" title="React"></i>
-              <span class="skill-name">React</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Backend Category -->
-        <div class="skills-category">
-          <h3 class="category-title" data-aos="fade-right">Backend</h3>
-          <div class="skill-grid">
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
-              <i class="fab fa-java skill-icons" title="Java"></i>
-              <span class="skill-name">Java</span>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
-              <i class="fab fa-node-js skill-icons" title="Node.js"></i>
-              <span class="skill-name">Node.js</span>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
-              <i class="fas fa-server skill-icons" title="Express"></i>
-              <span class="skill-name">Express</span>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="250">
-              <i class="fas fa-database skill-icons" title="MongoDB"></i>
-              <span class="skill-name">MongoDB</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Other Skills Category -->
-        <div class="skills-category">
-          <h3 class="category-title" data-aos="fade-right">Tools & Other</h3>
-          <div class="skill-grid">
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
-              <i class="fab fa-git-alt skill-icons" title="Git"></i>
-              <span class="skill-name">Git</span>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
-              <i class="fab fa-github skill-icons" title="GitHub"></i>
-              <span class="skill-name">GitHub</span>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
-              <i class="fas fa-terminal skill-icons" title="Command Line"></i>
-              <span class="skill-name">Command Line</span>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="250">
-              <i class="fas fa-code skill-icons" title="VS Code"></i>
-              <span class="skill-name">VS Code</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr class="custom-divider" />
+  <!-- Removed duplicate Skills section after reordering -->
 
     <div id="contact" class="contact section">
       <div class="heading" data-aos="fade-up">

@@ -111,6 +111,80 @@ body {
   font-weight: 400;
 }
 
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 10px 16px;
+  z-index: 100000;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 10px;
+  outline: none;
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* Focus visibility improvements */
+button:focus-visible,
+a:focus-visible,
+.preview-btn:focus-visible,
+.modal-btn:focus-visible,
+.filter-btn:focus-visible,
+.social-links:focus-visible,
+.social-contact-link:focus-visible {
+  outline: 3px solid var(--primary-light);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Provide visible focus for dark theme */
+.dark-theme button:focus-visible,
+.dark-theme a:focus-visible,
+.dark-theme .preview-btn:focus-visible,
+.dark-theme .modal-btn:focus-visible,
+.dark-theme .filter-btn:focus-visible,
+.dark-theme .social-links:focus-visible,
+.dark-theme .social-contact-link:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Improve contrast on hover for badges */
+.tech-badge:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+/* Smooth outline transition */
+button,
+a,
+.preview-btn,
+.modal-btn,
+.filter-btn {
+  transition: outline-color 0.15s ease, outline-offset 0.15s ease;
+}
+
+/* Ensure modal content scroll isolation */
+.project-modal:focus-visible {
+  outline: none;
+}
+
 ::selection {
   background-color: var(--primary-light);
   color: var(--primary-dark);
