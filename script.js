@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return emailRegex.test(email);
   }
 
-  // Helper function to show form status
+    // Helper function to show form status
   function showFormStatus(type, message) {
     formStatus.style.display = "block";
     formStatus.textContent = message;
@@ -159,6 +159,8 @@ document.addEventListener("DOMContentLoaded", () => {
       formStatus.classList.add("loading");
     }
   }
+
+  // Add smooth scrolling animation for navigation links
 
   // Add smooth scrolling animation for navigation links
   const navLinks = document.querySelectorAll(".nav-link");
