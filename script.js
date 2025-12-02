@@ -160,38 +160,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Handle resume link in navigation
-  if (!document.querySelector("a.nav-link.resume-link")) {
-    const resumeLink = document.createElement("a");
-    resumeLink.href = "#";
-    resumeLink.className = "nav-link resume-link";
-    resumeLink.textContent = "Resume";
-
-    // Add click event to download resume directly
-    resumeLink.addEventListener("click", (e) => {
-      e.preventDefault();
-      downloadResume();
-    });
-
-    // Insert after "About" link
-    const aboutLink = document.querySelector('a[href="#about"]');
-    if (aboutLink && navInfo) {
-      navInfo.insertBefore(resumeLink, aboutLink.nextSibling);
-    }
-  }
-
   // Add smooth scrolling animation for navigation links
   const navLinks = document.querySelectorAll(".nav-link");
   navLinks.forEach((link) => {
     link.addEventListener("click", function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute("href").substring(1);
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+      const href = this.getAttribute("href");
+
+      // Only prevent default and scroll if it's an anchor link (starts with #)
+      if (href.startsWith("#")) {
+        e.preventDefault();
+        const targetId = href.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
       }
     });
   });
@@ -362,36 +347,4 @@ function setupScrollAnimations() {
   // Initial check for elements already in view
   animateSkillBars();
   fadeInOnScroll();
-}
-
-// Resume download functionality
-function downloadResume() {
-  // Create a link to the PDF file
-  const pdfURL = "media/Vedant_Singh_Resume.pdf"; // Updated path to the resume in media folder
-
-  // Create a temporary link element
-  const link = document.createElement("a");
-  link.href = pdfURL;
-  link.setAttribute("download", "Vedant_Singh_Resume.pdf");
-
-  // Show a small notification that download is starting
-  const notification = document.createElement("div");
-  notification.textContent = "Downloading resume...";
-  notification.style.cssText =
-    "position:fixed; bottom:20px; right:20px; background-color:var(--primary-color); color:white; padding:10px 15px; border-radius:5px; box-shadow:0 2px 5px rgba(0,0,0,0.2); z-index:9999;";
-  document.body.appendChild(notification);
-
-  // Append to the document
-  document.body.appendChild(link);
-
-  // Trigger the download
-  link.click();
-
-  // Clean up
-  document.body.removeChild(link);
-
-  // Remove notification after 3 seconds
-  setTimeout(() => {
-    document.body.removeChild(notification);
-  }, 3000);
 }
