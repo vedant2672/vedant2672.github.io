@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return emailRegex.test(email);
   }
 
-    // Helper function to show form status
+  // Helper function to show form status
   function showFormStatus(type, message) {
     formStatus.style.display = "block";
     formStatus.textContent = message;
